@@ -1,0 +1,168 @@
+$gray1: #a3a6a9;
+$gray2: #545454;
+$black: #000;
+
+.main {
+  padding: 81px 123px;
+
+  &__title {
+    font: 400 64px/76px "Rubik";
+    font-size: calc(1vw + 50px);
+    color: $black;
+    margin-bottom: 74px;
+  }
+
+  &__sortBlock {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+
+    &-inputs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    &-sortList,
+    &-sortInput {
+      width: 466px;
+      border-bottom: 1px solid $black;
+      padding-bottom: 7px;
+    }
+
+    .sort-label {
+      font: 400 16px/160% "Rubik";
+      color: $black;
+    }
+    .sort-input {
+      width: 100%;
+      height: 30px;
+
+      &::placeholder {
+        font: 400 16px/160% "Rubik";
+        color: $gray1;
+      }
+    }
+
+    &-clearSort {
+      cursor: pointer;
+      .sort-title {
+        font: 400 16px/160% "Rubik";
+        color: $gray1;
+        margin-right: 12px;
+      }
+    }
+  }
+
+  &__vacanciesBlock {
+    margin-top: 40px;
+  }
+  &__vacancyItem {
+    margin-bottom: 24px;
+    border: 1px solid #000000;
+    padding: 20px;
+    gap: 93px;
+    display: flex;
+    justify-content: space-between;
+    max-height: 568px;
+    overflow: hidden;
+
+    &.active {
+      max-height: 100%;
+
+      & .main__vacancyItem--more {
+        display: none;
+      }
+    }
+
+    &--logo {
+      width: 373px;
+      height: 93px;
+      object-fit: cover;
+      margin-bottom: 57px;
+    }
+
+    &--firstText {
+      font: 400 16px/140% "Rubik";
+      color: $gray2;
+      margin-bottom: 17px;
+    }
+    &--secondText {
+      font: 400 16px/140% "Rubik";
+      margin-left: 5px;
+      color: $black;
+    }
+    &_rightSide {
+      position: relative;
+      width: 100%;
+    }
+    &--title {
+      font: 400 32px/160% "Roboto";
+      color: $black;
+      hyphens: auto;
+      margin-bottom: 8px;
+    }
+    &--description {
+      font: 400 16px/160% "Roboto";
+      color: $black;
+      margin-bottom: 8px;
+    }
+    &--listItem {
+      margin-bottom: 15px;
+    }
+    &--more {
+      z-index: 2;
+      position: absolute;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) -59.32%,
+        #ffffff 42.84%
+      );
+      width: 100%;
+      height: 60px;
+      bottom: -25px;
+
+      font: 400 16px/140% "Roboto";
+      color: $gray1;
+    }
+  }
+  @media screen and (max-width: 1002px) {
+    &__vacancyItem {
+      flex-direction: column;
+      gap: 20px;
+      position: relative;
+      &_rightSide {
+        position: static;
+        width: 100%;
+      }
+      &--more {
+        bottom: -10px;
+      }
+    }
+  }
+  @media screen and (max-width: 665px) {
+    padding: 81px 24px;
+    &__sortBlock {
+      &-sortList,
+      &-sortInput {
+        width: 100%;
+      }
+    }
+
+    &__vacancyItem {
+      &--logo {
+        width: 100%;
+        height: 59px;
+      }
+      &--title {
+        font-size: 22px;
+      }
+      &--description {
+        line-height: 140%;
+      }
+    }
+  }
+}
